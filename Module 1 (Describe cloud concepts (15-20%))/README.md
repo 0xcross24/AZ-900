@@ -56,5 +56,34 @@ Consumption - a virtual metric used to calculate how much each resource in Azure
 3. Infrastructure as a Service (IaaS)
 4. On-prem
 
-Software as a Service Responsibilities
+#### Responsibility always retained by the customer
 
+* Information and data
+* Devices (Mobile and PCs)
+* Accounts and Identities
+
+#### Responsibility varies by type
+
+* Identity and directory infrastructure
+     - IaaS and On-prem - Customer's responsbilities
+     - SaaS and PaaS - Responsibility is shared between cloud and customer
+
+* Applications
+     - SaaS - Cloud provider's responsibility
+     - PaaS - Responsibility is shared between cloud and customer
+     - IaaS and On-prem - Customer's responsibility
+
+* Network controls
+     - SaaS - Cloud provider's responsibility
+     - PaaS - Responsibility is shared between cloud and customer
+     - IaaS and On-prem - Customer's responsibility
+
+* Operating System
+     - SaaS and PaaS - Cloud provider's responsibility
+     - IaaS and On-Prem - Customer's responsibility
+
+#### Responsibility transfers to cloud provider
+
+* Physical Hosts, Network, Datacenter
+     - SaaS, PaaS, IaaS - Cloud provider's responsibility
+     - On-Prem - Customer's responsibility
