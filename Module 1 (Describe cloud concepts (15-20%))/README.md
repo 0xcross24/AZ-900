@@ -128,3 +128,14 @@ A hybrid cloud is a combination of both public and private clouds in an intern-c
 | Organizations pay only for what they use | Hardware must be purchased for startup and maintenance | Organizations control security, compliance, or legal requirements |
 | Organizations don't have complete control over resources and security | Organizations are responsible for hardware maintenance and updates | |
 
+#### Multi-cloud
+
+Dealing with two or more public cloud providers and manage resources and security in both environments
+
+#### Azure Arc
+
+Set of technollogies that helps manage your cloud environment. Provides management in public cloud, a private cloud in datacenter, or a hybrid cloud.
+
+#### Azure VMware Solution
+
+Allows you to run your VMware workloads in Azure with seamless integration and scalability
