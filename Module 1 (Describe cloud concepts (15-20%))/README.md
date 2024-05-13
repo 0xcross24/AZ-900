@@ -87,3 +87,44 @@ Consumption - a virtual metric used to calculate how much each resource in Azure
 * Physical Hosts, Network, Datacenter
      - SaaS, PaaS, IaaS - Cloud provider's responsibility
      - On-Prem - Customer's responsibility
+
+#### Summary
+
+When using cloud provider, you'll always be responsible for:
+* The information and data stored in the cloud
+* Devices that are allowed to connect to your cloud (cell phones. computers, and so on)
+* The accounts and identities of the people, services, and devices within your organization
+
+The cloud provider is always responsible for:
+* The physical datacenter
+* The physical network
+* The physical hosts
+
+Your service model will determine responsibility for things like:
+* Operating systems
+* Network controls
+* Applications
+* Identity and infrastructure
+
+### Define Cloud Models
+
+#### Private Cloud
+
+Private cloud provides much greater control for the company and its IT department. Private cloud is the most similar to conventional corporate datacenter. This cloud comes with a greater cost and fewer benefits of a public department but gives full control the the customerl
+
+#### Public Cloud
+
+A public cloud is built, controlled, and maintained by a third-party cloud provider. Anyone can purchase these cloud services to use the resources.
+
+#### Hybrid Cloud
+
+A hybrid cloud is a combination of both public and private clouds in an intern-connected environment. A company can still have the control of the cloud it needs equivalent to a private cloud and deploy public cloud resources based on the need of the company.
+
+
+| Public cloud | Private cloud | Hybrid cloud |
+| ------------ | ------------- | ------------ |
+| No capital expenditures to scale up | Organizations have complete control over resources and security | Provides the most flexibility |
+| Applications can be quickly provisioned and deprovisioned | Data is not collocated with other organizations data | Organizations determine where to run their applications |
+| Organizations pay only for what they use | Hardware must be purchased for startup and maintenance | Organizations control security, compliance, or legal requirements |
+| Organizations don't have complete control over resources and security | Organizations are responsible for hardware maintenance and updates | |
+
