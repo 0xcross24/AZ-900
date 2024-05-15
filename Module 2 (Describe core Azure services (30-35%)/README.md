@@ -44,9 +44,9 @@
 - Ensures data residency, sovereignty, resiliency, and compliance requirements are met
 - Fault tolerant to avoid single point of failure
 - Broken up in to areas ("Continents")
-      - America
-      - Europe
-      - Asia Pacific
-      - Middle East and Africa
+     - America
+     - Europe
+     - Asia Pacific
+     - Middle East and Africa
 - Each region belongs to only one Geography
 
