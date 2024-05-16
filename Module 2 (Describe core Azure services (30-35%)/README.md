@@ -50,3 +50,27 @@
      - Middle East and Africa
 - Each region belongs to only one Geography
 
+### Azure Resource
+- Used to manage services in azure
+- Represents service lifecycle
+- Uses JSON format
+
+### Resources Groups
+- Grouping of resources
+- Organized by:
+     - Type
+     - Lifecycle (app, environment)
+     - Department
+     - Location
+     - Combination of above
+
+### Resource Manager
+- Each resource must be in one and only one resource group
+- Resource groups have their own location assigned
+- Resources can reside in different locations
+- Resources can be moved between resource groups
+- Resource groups can not be nested
+- Organized based on organization
+     - Billing
+     - Security and access management
+     - Application Lifecycle
