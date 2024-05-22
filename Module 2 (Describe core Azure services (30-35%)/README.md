@@ -167,3 +167,27 @@
 ### Content Delivery Network
 - Minimizes latency
 - Has a copy of content from the main server for faster delivery
+
+### Data Types
+- Strucutred - Data that are represented using strict table schema. Each row must follow the defined schema. Some tables may have defined relationships between them and are sed in relational databases
+- Semi-structured - Data that can be represented using tables but without a strict defined schema. Rows must have a unique key identifier
+- Unstructured - Any files in any format. Examples: binary files, application files, images, movies, etc.
+
+### Storage Account
+- Groub of services used to store files, messages, and semi-structured data 
+     - Blob Storage
+     - Queue Storage
+     - Table Storage
+     - File Storage
+- Highly Scalable (Up to Petabytes of data)
+- Highly durable (99.999999999%, up to 16 nines)
+- Cheapest per GB storage
+
+#### Blob Storage
+- BLOB - Binary Large Object File
+- Designed to store any types of files
+- Three storage tiers
+     - Hot - Frequently accessed data
+     - Cool - Infrequently acessed data (lower availability, high durability)
+     - Archive - Rarely accessed data
+
