@@ -168,13 +168,57 @@
 - Minimizes latency
 - Has a copy of content from the main server for faster delivery
 
+## Describe Azure Storage Accounts
+
+When you create a storage account, you pick your own storage account type.
+
+- Locally redundant storage (LRS)
+- Geo-redundant storage (GRS)
+- Read-access geo-redundant storage (RA-GRS)
+- Zone-redundant storage (ZRS)
+- Geo-zone-redundant storage (GZRS)
+- Read-access geo-zone-redundant storage (RA-GZRS)
+
+### Redundancy in the primary region
+Data is always replicated three times in the primary region
+
+#### Locally Redundant Storage
+- Replicates data three times within a SINGLE DATA CENTER
+- Provides 11 NINES of durability 99.999999999%
+- Lowest cost redundancy option
+- Least durability compared to other options
+- Only protects from disk failures but NOT against natural disasters such as fire or a flood
+
+#### Zone-Redundant Storage
+- Replicates data synchronously across three other Azure availability zones in the primary zone.
+- Provides 12 NINES of durability 99.9999999999%
+- Data is accessible for RW even if a zone becomes unavailable
+- Microsoft recommends ZRS in the primary region for applications that require high availability
+- Recommended to restrict data replication within a country or region to meet data governance requirements
+
+### Redundancy in a secondary region
+- Provides high durability
+- Copies data to a secondary region
+- Secondary region is paired based on Azure Region Pairs and cannot be changed
+
+#### Geo-Redundant Storage
+- Copies data synchronously three times within a single location in a primary region using LRS
+- Copies data asynchronously to a single location in a secondary region using LRS
+- Provides 16 NINES of durability 99.99999999999999%
+
+#### Geo-Zone-Redundant Storage
+- Replicates data synchronously across three other Azure availability zones in the primary region
+- Replicates data to a secondary region using LRS
+- Recommended for requiring maximum consistency, durability, availability, excellent performance, and resilience for disaster recovery
+- Provides 16 NINES of durability 99.99999999999999
+
 ### Data Types
-- Strucutred - Data that are represented using strict table schema. Each row must follow the defined schema. Some tables may have defined relationships between them and are sed in relational databases
+- Structured - Data that are represented using strict table schema. Each row must follow the defined schema. Some tables may have defined relationships between them and are sed in relational databases
 - Semi-structured - Data that can be represented using tables but without a strict defined schema. Rows must have a unique key identifier
 - Unstructured - Any files in any format. Examples: binary files, application files, images, movies, etc.
 
 ### Storage Account
-- Groub of services used to store files, messages, and semi-structured data 
+- Group of services used to store files, messages, and semi-structured data 
      - Blob Storage
      - Queue Storage
      - Table Storage
@@ -186,8 +230,97 @@
 #### Blob Storage
 - BLOB - Binary Large Object File
 - Designed to store any types of files
+     - Streaming video and audio
+     - Serving images or documents
+     - Storing data for backup and restore, disaster recovery and archiving
+     - Storing data by an on-premises or Azure-hosted service
 - Three storage tiers
      - Hot - Frequently accessed data
-     - Cool - Infrequently acessed data (lower availability, high durability)
-     - Archive - Rarely accessed data
+     - Cool - Infrequently acessed data (lower availability, high durability) and stored for at least 30 days
+     - Cold - Infrequently accessed data and stored for at least 90 days
+     - Archive - Rarely accessed data and stored for at least 180 days
 
+#### Queue Storage
+- Storage for small pieces of data (messages)
+- Designed for scalable asynchronous processing
+
+#### Table Storage
+- Storage for semi-structured data (NoSQL)
+     - Doesn't require foreign keys, relationships, or strict schema
+     - Designed for quick access
+- Used by many programming interfaces and SDKs
+
+#### File Storage
+- Storage for files through shared drive protocols such as NFS
+- Designed to extend on-premise file shares or implement lift-and-shift-scenarios
+
+#### Disk Storage
+- Disk emulated in the cloud
+- Persistent storage for Virtual Machines
+- Contains different sizes, types (SSD, HDD), and performance tiers
+- Disk can be unmanaged or managed
+
+#### Benefits of Azure Storage
+- Durable and highly available
+- Secure
+- Scalable
+- Managed
+- Accessible
+
+### Azure Migrate
+
+A service used to help you migrate from on-premises to the cloud
+
+- Unified migration platform - A single portal to start, run, and track your migration to Azure
+- Range of tools
+     - Discovery and Assessment
+     - Server Migration
+     - Independent software vendor (ISV) offerings
+- Assessment and migration - Assess and migrate on-premises infrastructure from the Azure Migrate Hub
+
+#### Integrated Tools
+- Discovery and assessment - Discover and assess on-premises servers running on VMware, Hyper-V, and physical servers in preparation for migration to Azure
+- Server Migration - Migrate VMware VMs, Hyper-V VMs, physical servers, other virtualizes servers, and public cloud VMs to Azure
+- Data Migration Assistant - A Stand-alone tool to assess SQL Servers. Helps pinpoint potential problems blocking migration
+- Database Migration Service - Migrates on-premises databases to Azure VMs running SQL server, Azure SQL Database, or SQL Manages Instances
+- Service migration assistant - A standalone tool to assess on-premises websites for migration to Azure App Service. Helps migrate .NET and PHP web apps to Azure
+- Data Box - Helps move large amounts of offline data to Azure
+
+#### AzCopy
+- A Command-line utility to copy blobs or files from or to your storage account.
+- Upload, download, copy and sync files between storage account
+- Can be configured to work with other cloud providers to help move files back and forth between clouds
+
+#### Azure Storage Explorer
+- A GUI to manage files and blobs in your Azure Storage Accounts
+- Works on Windows, MacOS, and Linux
+- Uses AzCopy on the backend to perform all of the file and blob management tasks
+- Upload, Download, or move between storage accounts in Azure
+
+#### Azure File Sync
+- A tool that centralizes your file shares in Azure Files
+- Automatically configures a bi-directional sync with your files in Azure
+- Miniture version of CDN of your Windows Server
+
+### Database Services
+- Different types of databases in Azure
+
+#### Cosmos DB
+- Globally distributed NoSQL Database services
+- Schema-less
+- Semi-structured (NoSQL)
+- Multiple APIs (SQL, MongoDB, Cassandra, Gremlin, Table Storage)
+- Used for highly responsive applications with super low latency responses and multi-regional applications
+
+#### SQL Database
+- Relational database service in the cloud (PaaS) (DBaaS - Database as a Service)
+- Structured data service (Uses schema and relationships)
+- High performance, reliable, fully managed and secure database for building applications
+
+#### Azure SQL Database
+- Azure SQL Database - A Relational database based on SQL server
+- Azure Database for MySQL - Azure SQL version of MySQL engine
+- Azure Database for PostgreSQL - Azure SQL version for PostgreSQL engine
+- Azure SQL Managed Instance - Fully fledged SQL server managed by cloud provider
+- Azure SQL on VM - Fully fledged SQL Server on IaaS
+- Azure SQL DW (Synapse) - Massively Parallel Processing (MPP) version of SQL server
