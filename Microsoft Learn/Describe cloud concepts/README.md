@@ -13,6 +13,4 @@ A delivery of computing services over the internet.
 
 Shared responsibility model is to inform who is responsible for what
 
-[[https://learn.microsoft.com/en-us/training/wwl-azure/describe-cloud-compute/media/shared-responsibility-b3829bfe.svg]]
-
-
+![Shared Responsibility](https://learn.microsoft.com/en-us/training/wwl-azure/describe-cloud-compute/media/shared-responsibility-b3829bfe.svg)
