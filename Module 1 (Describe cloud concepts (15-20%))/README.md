@@ -10,12 +10,12 @@
 
 ### Cloud Concept
 
-Scalability - the ability to scale, can ALLOCATE and DEALLOCATE resources at any time
-Elasticity - the ability to DYNAMICALLY scale
-Agility - the ability to scale QUICKLY based on demand
-Fault tolerance - the ability to maintain the UPTIME while physical and service component failures happen
-Disaster recovery - the process and design principle which allows a system to RECOVER from nautral or human induced disasters
-High availability - the agreed level of operational uptime for the system. A calculation of system uptime versus whole lifetime of the system.
+- Scalability - the ability to scale, can ALLOCATE and DEALLOCATE resources at any time
+- Elasticity - the ability to DYNAMICALLY scale
+- Agility - the ability to scale QUICKLY based on demand
+- Fault tolerance - the ability to maintain the UPTIME while physical and service component failures happen
+- Disaster recovery - the process and design principle which allows a system to RECOVER from nautral or human induced disasters
+- High availability - the agreed level of operational uptime for the system. A calculation of system uptime versus whole lifetime of the system.
 * availability = uptime/(uptime + downtime)
 
 ### Economies of Scale
