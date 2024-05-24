@@ -157,3 +157,49 @@ Manage your cloud environment and resources. Manage these through:
 - Using APIs
 - Powershell
 
+# Describe cloud service types
+
+## Describe Infrastructure as a Service
+
+- Provides the maximum control over your cloud resources
+- Cloud provider is responsible for hardware, network connectivity, and physical security
+- Companies are responsible for everything else
+- Just "renting" the hardware in a cloud datacenter
+
+### Scenarios on when to use IaaS
+
+- Lift and shift migration
+     - Setting up cloud resources similar to your on-prem datacenter
+- Testing and development
+     - Used to start up or shut down different environments rapidly
+
+## Describe Platform as a Service
+
+- Middle ground between Infrastructure as a Service and Platform as a Service
+- Cloud is responsible for:
+     - Physical infrastructure, security and the internet
+     - Maintaining OS, middleware, development tools, and business intelligence services
+- Well suited to provide a complete development environment without maintaining all the development infrastructure
+
+### Scenarios on when to use PaaS
+
+- Development framework
+     - Frameworks that developers can build upon to develop
+     - Allows developers to create applications using built-in software components
+- Analytics or business intelligence
+     - Tools already provided as a service
+     - Allows organizations to analyze and mine their data
+
+## Describe Software as a Service
+
+- Renting or using fully develped applications.
+     - Emails, financial software, messaging applications
+- Least flexible but easiest to get up and running
+- Only responsible for data, devices, and accounts
+
+### Scenarios on when to use PaaS
+
+- Email and messaging (outlook, gmail, slack, microsoft teams)
+- Business productivity applications (Powerbi)
+- Finance and expense tracking (bloomberg)
+
