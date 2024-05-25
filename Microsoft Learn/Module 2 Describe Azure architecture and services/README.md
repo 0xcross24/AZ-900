@@ -205,3 +205,151 @@
 - Stateless (restarts every time they respond to an event)
 - Stateful (a Durable Function where a context is passed through the function)
 
+## Describe application hosting options
+
+- VMs give you maximum control of the hosting environment
+- Containers have the ability to isolate and manage different hosting solution
+
+### Azure App Service
+
+- Build and host web apps, background jobs, mobile back-ends and RESTFUL APIs
+- No need to manage the infrastructure
+- Automatic scaling and high availabilty
+- Supports Windows and Linux
+
+#### Types of app serices
+
+- Web apps
+- API apps
+- WebJobs
+- Mobile apps
+
+##### Responsibilities handled by App Service
+
+- Deployment and management
+- Endpoint security
+- Scaling and Load balancing
+
+## Describe Azure virtual networking
+
+- Isolation and segmentation
+- Internet communications
+- Communicate between Azure resources
+- Communicate with on-premises resources
+- Route network traffic
+- Filter network traffic
+
+### Isolation and Segmentation
+
+- A Private or public IP space
+- Uses subnets to segment and isolate network blocks
+
+### Communicate between Azure resources
+
+- Virtual networks can connect to other Azure resources
+     - Power Apps
+     - Azure Kubernetes Service
+     - Azure virtual machine scale sets
+- Service endpoints connects to other Azure resource types
+     - Azure SQL databases
+     - Storage accounts
+
+### Communicate with on-premises resources 
+
+- Point to site - a virtual private network connections from outside to corporate network
+- Site to Site - a virtual private network that links your on-premise VPN device or gateway to Azure VPN gateway
+- Azure ExpressRoute - a dedicated private connectivity to Azure that doesn't travel over the internet. Good for greater bandwidth and higher level of security
+
+### Route network traffic
+
+- Route tables - defined rules about how traffic should be directed
+- Border Gateway Protocol (BGP) - works with Azure VPN gateways, Azure Route Server, or Azure ExpressRoute to propagate on-premises BGP routes to Azure virtual networks
+
+### Filter network traffic
+
+- A network security group that contain multiple inbound and outbound security rules. Used to block traffic, based on source and destination IP address, port and protocol
+- A network virtual appliance that carries out particular network function such as running a firewall or performing wide area network (WAN) optimization
+
+### Connect virtual networks
+
+- Virtual network peering - Allows two virtual networks to connect directly to each other and never through the public internet
+- User defined routes (UDR) - Allows you to control the routing tables between subnet within virtual network or between virtual networks
+
+## Describe Azure virtual private networks
+
+- An encrypted tunnel to connect two or more trusted private network over the internet
+- Allows sharing of data securely and safely
+
+### VPN gateways
+
+- Connect on-premises datacenters to virtual networks (Site to Site)
+- Connect individual device to virtual networks (Point to Site)
+- Connect virtual networks to other virtual networks (Network to Network)
+
+#### Policy-based VPN gateway
+
+- Statically assigns IP address that should be encrypted through each tunnel
+- If the IP address matches, it is then traversed through a specifically assigned tunnel
+
+#### Route-based gateway
+
+- IP routing decides which tunnel interfaces to use when sending each packet
+- On-premises devices preferred connection
+- Connections between virtual networks
+- Point to site
+- Multisite connections
+- Coexistence with an Azure ExpressRoute gateway
+
+### High-availability scenarios
+
+#### Active/standby
+
+- Two instances here one is active and the other is on standby
+- If active instance is disrupted, the standby takes over and becomes active
+
+#### Active/active
+
+- Assigns a unique public IP address to each instance
+- Create separate tunnels from the on-premises device to each IP address
+- Traffic will be routed to multiple tunnels
+
+#### ExpressRoute failover
+
+- Built-in resiliency
+- Ensures there's always a connection to the virtual network
+
+#### Zone-redundant gateways
+
+- In regions that support availability zones
+- Provides resiliency, scalability, and higher availability to virtual network gateways
+- Uses standard public IP addresses instead of basic public IP addresses
+
+## Describe Azure ExpressRoute
+
+- Extends your on-premises network into Microsoft cloud over a private connection
+- Connection is called ExpressRoute Circuit
+- Any to Any (IP VPN) network, Point to Point (Ethernet network), or a virtual cross-connection
+- Connections don't go over the public internet
+
+### Features and benefits of ExpressRoute
+
+- Connects to Microsoft cloud services across all regions
+- Global connectivity with ExpressRoute Global Reach
+- Dynamic routing using BGP
+- Built-in redundancy
+
+### ExpressRoute connectivity models
+
+- CloudExchnage colocation - physically co-located at a cloud datacenter
+- Point to Point Ethernet connection
+- Any to any connection
+- Directly from ExpressRoute sites
+
+## Describe Azure DNS
+
+- Reliability and performance
+- Security
+- Ease of Use
+- Customizable virtual networks
+- Alias records
+
