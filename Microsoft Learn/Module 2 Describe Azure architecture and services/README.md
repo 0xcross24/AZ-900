@@ -357,4 +357,264 @@
 
 # Describe Azure storage services
 
+## Describe Azure storage accounts
 
+A storage account provides a unique namespace for your Azure Storage data that is accessible from anywhere in the world over HTP or HTTPS. Provides availability, scalability, and durability
+
+- Locally redundant storage (LRS)
+- Geo-redundant storage (GRS)
+- Read-access-geo-redundant storage (RA-GRS)
+- Zone-redundant storage (ZRS)
+- Geo-zone-redundant storage (GZRS)
+- Read-access geo-zone-redundant storage (RA-GZRS)
+
+### Storage account endpoints
+
+- A unite namespace in Azure for storing data
+
+| Storage service | Endpoint |
+| --------------- | -------- |
+| Blog Storage | https://<storage-account-name>.blob.core.windows.net |
+| Data Lake Storage Gen2 | https://<storage-account-name>.dfs.core.windows.net |
+| Azure Files | https://<storage-account-name>.file.core.windows.net | 
+| Queue Storage | https://<storage-account-name>.queue.core.windows.net |
+| Table Storage | https://<storage-account-name>.table.core.windows.net |
+
+## Describe Azure storage redundancy
+
+- How your data is replicated in the primary region
+- Whether your data is repliated to a second region
+- Whether your application requires read access to the replicated data in the secondary region
+
+### Redundancy in the primary region
+
+#### Locally redundant storage
+
+- Replicates data three times within a single data center in the primary region
+- Provides at least 11 nines of durability (99.999999999%)
+- Lowest-cost redundancy option
+- Least durabile compared to other options
+
+![](https://learn.microsoft.com/en-us/training/wwl-azure/describe-azure-storage-services/media/locally-redundant-storage-37247957.png)
+
+#### Zone-redundant storage
+
+- Replicates data synchronously across three Azure availability zones in the primary region
+- Provides at least 12 nines of durability (99.9999999999%)
+- Accessible for both read and write operations even if a zone is unavailable
+- Recommended by Microsoft to use ZRS in the primary zone
+
+![](https://learn.microsoft.com/en-us/training/wwl-azure/describe-azure-storage-services/media/zone-redundant-storage-6dd46d22.png)
+
+### Redundancy in the secondary region
+
+- Additional copy of data in your storage account
+- Secondary region is automatically paired to the primary region chosen in your storage account
+- By default, not available for read or write access unless there's a failover to the secondary region
+- Becomes the primary region when there's a failover
+
+#### Geo-redundant storage
+
+- Uses locally redundant storage (LRS) locally in the primary region
+- Copies the data in the primary region to the secondary region using LRS
+- GRS offers 16 nines of durability (99.99999999999999%)
+
+![](https://learn.microsoft.com/en-us/training/wwl-azure/describe-azure-storage-services/media/geo-redundant-storage-3432d558.png)
+
+#### Geo-zone-redundant storage
+
+- Uses zone redundant storage (ZRS) in the primary region
+- Replicates the data in the primary region to the secondary region using LRS
+- Provides 16 nines of durability (99.99999999999999%)
+
+![](https://learn.microsoft.com/en-us/training/wwl-azure/describe-azure-storage-services/media/geo-zone-redundant-storage-138ab5af.png)
+
+#### Read access to data in the secondary regiom
+
+- By default, data is not available in the second region until failover occurs
+- Can enable to read access to the secondary region
+- Also called read-access geo-redundant storage (RA-GRS) or read-access geo-zone-redundant storage (RA-GZRS)
+
+## Describe Azure storage services
+
+- Azure Blobs
+- Azure Files
+- Azure Queues
+- Azure Disks
+- Azure Tables
+
+### Benefits of Azure Storage
+
+- Durable and highly available
+- Secure
+- Scalable
+- Managed
+- Accessible
+
+### Azure Blob
+
+- Serving images or documents to a browser
+- Storing files for distributed access
+- Streaming video and audio
+- Storing data for backup and restore, disaster recovery and archiving
+- Storing data for analysis by an on-premises or Azure-hosted service
+
+#### Accessing blob storage
+
+- Accessed through HTTP/HTTPS
+- URLs
+- Azure REST API
+- Azure Powershell
+- Azure CLI
+- Azure Storage client library
+
+#### Blob storage tiers
+
+- Hot access tier - Storing frequently accessed data
+     - Set at the account level
+     - Set at the blob level or after upload
+- Cool access tier - Storing infrequently accessed data (least 30 days)
+     - Set at the account level
+     - Set at the blob level or after upload
+- Cold access tier - Storing infrequently  accessed data (least 90 days)
+     - Set at the blob level or after upload
+- Archive access tier - Storing rarely accessed data (180 days)
+     - Set at the blob level or after upload
+     - Stores offline data and lowest storage costs
+     - Highest costs to rehydrate and access data
+
+### Azure Files
+
+- Accessible via NFS or SMB
+
+#### Azure Files key benefits
+
+- Shared access - NFS and SMB protocols
+- Fully managed - Cloud provider manages updates, patches, and replaces faulty disks
+- Scripting and tooling - Powershell, Azure CLI, Azure portal, Azure Storage Explorer
+- Resiliency
+- Familiar programmability - Azure Storage Client Libraries or Azure Storage REST API
+
+### Azure Queues
+
+- Stores large number of messages
+- Can be used with Azure Functions to trigger an action when a message is received
+
+### Azure Disks
+
+- Azure Disk storage or Azure managed disks used with Azure VMs
+- Virtualized physical disk
+
+### Azure Tables
+
+- Stores structured, non-relational data
+- NoSQL datastorage
+
+## Identify Azure data migration options
+
+### Azure Migrate
+
+- A unified migration platform - A portal to start, run and track your migration to Azure
+- Range of tools
+     - Discovery and assessment
+     - Server Migration
+     - Azure Migrate
+- Assessment and migration - Using Azure Migrate hub, you can assess an migrate to on-premises infrastructure to Azure
+
+#### Integrated tools
+
+- Discovery and assessment - Assess on-premises servers running on VMware, Hyper-V and physical servers in preparation for migration to Azure
+- Server Migration - Migrates VMware VMs, Hyper-V VMs, physical servers and public VMs to Azure
+- Data Migration Assistant - A stand-alone tool to assess SQL Servers that provides potential problems for migration
+- Database Migration Service - Migrate on-premises databases to Azure VMs running SQL Server, Azure SQL Database, or SQL Managed Instances
+- App Service migration assistant - A standalone tool to assess on-premises websites for migration to Azure App Service
+- Azure Data Box - To move large amounts of offline data to Azure
+
+### Azure Data Box
+
+- A physical migration service that helps transfer large amounts of data quickly
+- Ideally suited for transferring 40TBs of data
+
+## Identify Azure file movement options
+
+### AzCopy
+
+- A command-line utility to copy blobs or files
+- Upload, download, copy files between storage accounts
+
+### Azure Storage Explorer
+
+- A GUI that manages files and blobs in your Storage account
+
+### Azure File Sync
+
+- Centralize file share
+- Azure File Sync will stay bi-directionally synced with your files in Azure
+- Syncs your Windows file server to Azure
+- Act as a CDN from your windows file server to Azure
+
+# Describe Azure identity, access, and security
+
+## Describe Azure directory services
+
+Microsoft Entra ID is a directory that helps you maintain your on-premises Active Directory deployment
+Microsoft cloud-based Active Directory
+
+### Microsoft Entra ID
+
+- Authentication
+- Single sign on
+- Application management
+- Device management
+
+### Connecting On-premise AD with Microsoft Entra ID
+
+- Uses Microsoft Entra Connect
+     - Synchronizes user identities between Active Directory and Microsoft Entra ID
+
+### Microsoft Entra Domain Services
+
+- Manages domain services such as domain join, group policy, LDAP and Kerberos/NTLM authentication
+- Microsoft cloud-based domain controller
+- Performs a one-way synchronization from Microsoft Entra ID to Microsoft Entra Domain Services
+
+![](https://learn.microsoft.com/en-us/training/wwl-azure/describe-azure-identity-access-security/media/azure-active-directory-sync-topology-7359f2b8.png)
+
+## Describe Azure authentication methods
+
+![](https://learn.microsoft.com/en-us/training/wwl-azure/describe-azure-identity-access-security/media/passwordless-convenience-security-30321b4d.png)
+
+### Single Sign On
+
+- User can sign in one time and access multiple resources and applications
+- Users only memorize one password
+
+### Multifactor Authentication
+
+- Uses multiple authentication to access
+- Something the user knows
+- Something the user has
+- Something the user is
+
+#### Microsoft Entra multifactor authentication
+
+- Microsoft allows user to choose an additional form of authentication
+     - Phone call
+     - App notification
+
+### Passwordless authentication
+
+- More convenient
+- Requires setting up on a device
+- Uses a fingerprint or a pin to authenticate
+
+### Microsoft Authenticator App
+
+- A convenient multifactor authentication
+- Uses a phone app to confirm by using a PIN or biometric
+
+### FIDO2 security keys
+
+- Fast IDentity Online
+- Unphishable standards-based passwordless authentication method
+- Doesn't require a username or a password
