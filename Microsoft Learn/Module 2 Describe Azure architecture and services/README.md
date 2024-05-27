@@ -353,3 +353,8 @@
 - Customizable virtual networks
 - Alias records
 
+-------------------------------------------------------------------
+
+# Describe Azure storage services
+
+
