@@ -618,3 +618,66 @@ Microsoft cloud-based Active Directory
 - Fast IDentity Online
 - Unphishable standards-based passwordless authentication method
 - Doesn't require a username or a password
+
+## Describe Azure external identities
+
+- A person, device, service, etc. that is outside your org
+- External users can bring their own "identities"
+     - Google or Facebook sign on
+- Business to business (B2B) collaboration - External users are allowed to use their preferred identity to sign-in to your Microsoft applications
+- B2B direct connect - A mutual, two-way trust with another Microsoft Entra org
+- Microsoft Azure Active Directory business to customer (B2C) - Publish modern SaaS apps or custom-developed apps to consumers and customers while using Azure AD B2C for IAM
+
+## Describe Azure conditional access
+
+- A tool that Microsoft Entra ID uses to allow or deny access to resources. Also known as identity signals
+     - Who the user is
+     - Where the user is
+     - What device the user is requesting access from
+- MFA is used if a user logs in from an unknown location and not used if a user logs in from a known location
+![](https://learn.microsoft.com/en-us/training/wwl-azure/describe-azure-identity-access-security/media/conditional-access-9bd268b8.png)
+
+### When can I use Conditional Access
+
+- Require MFA based on role, location or network
+- Require access to services only through approved client applications
+- Require users to access only from managed devices that meets your standards for security and compliance
+- Block access from untrusted sources, unkown or unexpected locations
+
+## Describe Azure role-based access control
+
+- Least privilege - only grant access up to the level needed to complete a task
+- Azure role-based access control (Azure RBAC) - A defined roles where you assign individuals or groups to one or more roles, they all receive the associated access permissions
+
+### How is role-based access control applied to resources
+
+![](https://learn.microsoft.com/en-us/training/wwl-azure/describe-azure-identity-access-security/media/role-based-access-scope-4b12a8f3.png)
+
+- A Scope includes
+     - A management group
+     - A single subscription
+     - A resource group
+     - A single resource
+- Azure RBAC is hierarchical, when you grant access at a parent scope, child scopes get inherited
+
+### How is Azure RBAC enforced?
+
+- Any action that's initiated against an Azure resource that passes through Azure Resource Manager
+- Azure Resource Manager is accessed through Azure portal, Cloud Shell, Powershell, and Cli
+- Doesn't enforce access permissions at the application or data level
+- Application security must be handled by your application
+
+## Describe zero trust model
+
+- A security model that assumes the worsat case scenario
+     - Verify explicitly - Always authenticate and authorize based on all available data points
+     - Use least privilege access - Limit user access with Just-In-Time and Just-Enough-Access
+     - Assume breach - Minimize blast radius and segment access. Verify end-to-end encryption.
+
+### Adjusting to Zero Trust
+
+- Doesn't assume that a device is safe within corporate network
+- Requires everyone to authenticate
+- Grants access based on authentication rather than location
+
+![](https://learn.microsoft.com/en-us/training/wwl-azure/describe-azure-identity-access-security/media/zero-trust-cf9202be.png)
